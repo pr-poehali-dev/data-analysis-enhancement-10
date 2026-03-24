@@ -7,54 +7,64 @@ import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 
 export default function Index() {
   const missionStatement =
-    "В Stride Collective мы верим: движение — это не просто выбор, это образ жизни. Рожденные из духа бегового сообщества, мы объединяем бегунов со всего мира, которых связывает страсть к преодолению границ. Бежишь ли ты навстречу рассвету по городским улицам или покоряешь горные тропы — мы здесь, чтобы вдохновлять тебя. Наше сообщество живет ритмом шагов, силой упорства и радостью общих побед. Присоединяйся к нам — беги не только ради формы, но ради свободы, дружбы и чистой любви к движению."
+    "Мы шли разными дорогами, но судьба привела нас друг к другу. В этот особенный день мы хотим разделить нашу радость со всеми, кто дорог нам. Вы — часть нашей истории. Без вас этот день был бы неполным. Приходите разделить с нами первый день нашей совместной жизни, наполненный любовью, смехом и теплом близких сердец. Мы будем счастливы видеть вас рядом."
 
   const timelineEntries = [
     {
       id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RJ3iTXUn5SUexF6nHMZYhMoQLNCboK.png",
-      alt: "Бегунья в художественном размытии движения",
-      title: "Каждый шаг важен",
+      image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80",
+      alt: "Первая встреча",
+      title: "Наша первая встреча",
       description:
-        "От первой пробежки вокруг дома до сотого марафона — у каждого бегуна своя история. В Stride Collective мы чествуем новичков, которые впервые шнуруют кроссовки. Твой темп не важен — важна твоя страсть. Чего ты ждешь?",
+        "Это случилось три года назад на уютной вечеринке у общих друзей. Тот взгляд, та улыбка — и мир для нас стал другим. Мы говорили всю ночь напролёт и поняли: это начало чего-то особенного.",
       layout: "left" as const,
     },
     {
       id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LN9OPh9hw0b9rwSPRSslHoejcfoKHe.png",
-      alt: "Бегун с решимостью и концентрацией",
-      title: "Найди свой ритм",
+      image: "https://images.unsplash.com/photo-1529636798458-92182e662485?w=800&q=80",
+      alt: "Помолвка",
+      title: "Он сделал предложение",
       description:
-        "Гонишься за личными рекордами или просто встречаешь рассвет на бегу — наше сообщество принимает каждого. От спринтеров до любителей медленного бега, от трейлраннеров до звезд стадиона — здесь найдется место для тебя. Вопрос один: чего ты ждешь?",
+        "На берегу моря на закате, когда небо окрасилось в золото и розовый, Михаил встал на одно колено. Алина плакала от счастья, а слово «да» разнеслось над волнами. Этот момент мы будем помнить вечно.",
       layout: "right" as const,
     },
     {
       id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1FdGyjVpWQANGzsDWpoPIvF5SVI2za.png",
-      alt: "Бегун в динамике, демонстрирующий силу и грацию",
-      title: "Стань частью движения",
+      image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+      alt: "Наша свадьба",
+      title: "И вот — наш день",
       description:
-        "Бег — это не только километры, это моменты. Утренние разговоры, общие трудности, коллективные победы. В Stride Collective ты вступаешь не просто в группу — ты становишься частью семьи. Зашнуруй кроссовки, выйди на старт и открой, на что ты способен. Серьезно, чего ты ждешь?",
+        "15 июня 2025 года мы произнесём «да» перед теми, кого любим. Впереди — совместная жизнь, полная приключений, тепла и взаимной поддержки. И мы очень хотим начать её именно с вами рядом.",
       layout: "left" as const,
     },
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: "hsl(30, 30%, 97%)" }}>
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Mission Statement Section with Grid Background */}
-      <section id="mission" className="relative min-h-screen flex items-center justify-center py-20 bg-white">
-        {/* Subtle Grid Pattern */}
+      {/* Mission Statement Section */}
+      <section id="mission" className="relative min-h-screen flex items-center justify-center py-20" style={{ background: "hsl(30, 30%, 97%)" }}>
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-12 text-gray-900">НАША МИССИЯ</h2>
+            <p
+              className="text-sm tracking-[0.5em] mb-6 uppercase"
+              style={{ color: "hsl(350, 30%, 55%)", fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              С любовью
+            </p>
+            <h2
+              className="text-4xl md:text-6xl font-light tracking-widest mb-12 italic"
+              style={{ color: "hsl(25, 20%, 20%)", fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Дорогие гости
+            </h2>
             <TextGradientScroll
               text={missionStatement}
-              className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-gray-800"
+              className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed"
               type="word"
               textOpacity="soft"
             />
@@ -63,16 +73,29 @@ export default function Index() {
       </section>
 
       {/* Timeline Section */}
-      <section id="community" className="relative py-20 bg-white">
-        {/* Subtle Grid Pattern */}
+      <section id="community" className="relative py-20" style={{ background: "hsl(30, 25%, 95%)" }}>
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="relative z-10">
           <div className="container mx-auto px-6 mb-16">
             <div className="text-center">
-              <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-6 text-gray-900">МЫ РАДЫ КАЖДОМУ</h2>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-                У каждого бегуна свой путь. Вот лишь несколько историй из нашего открытого сообщества.
+              <p
+                className="text-sm tracking-[0.5em] mb-4 uppercase"
+                style={{ color: "hsl(350, 30%, 55%)", fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Три года вместе
+              </p>
+              <h2
+                className="text-4xl md:text-6xl font-light tracking-widest mb-6 italic"
+                style={{ color: "hsl(25, 20%, 20%)", fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Наша история
+              </h2>
+              <p
+                className="text-xl md:text-2xl font-light max-w-3xl mx-auto"
+                style={{ color: "hsl(25, 10%, 45%)", fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Каждая история любви уникальна. Вот наша — в трёх главах.
               </p>
             </div>
           </div>
@@ -82,8 +105,7 @@ export default function Index() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="relative py-20 bg-white">
-        {/* Subtle Grid Pattern */}
+      <section id="testimonials" className="relative py-20" style={{ background: "hsl(30, 30%, 97%)" }}>
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -94,12 +116,24 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-black tracking-wider text-gray-900 mb-6">
-              Что говорят наши{" "}
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">БЕГУНЫ</span>
+            <p
+              className="text-sm tracking-[0.5em] mb-4 uppercase"
+              style={{ color: "hsl(350, 30%, 55%)", fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Тепло близких
+            </p>
+            <h2
+              className="text-4xl md:text-6xl font-light tracking-widest mb-6 italic"
+              style={{ color: "hsl(25, 20%, 20%)", fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Слова{" "}
+              <span style={{ color: "hsl(350, 30%, 55%)" }}>близких</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Реальные истории от реальных бегунов, которые нашли свой ритм вместе со Stride Collective.
+            <p
+              className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed mb-12"
+              style={{ color: "hsl(25, 10%, 45%)", fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Те, кто знает нас лучше всего — делятся своими пожеланиями и воспоминаниями.
             </p>
           </motion.div>
 
@@ -107,12 +141,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Smooth Scroll Hero with CTA Overlay */}
+      {/* Final Parallax Section */}
       <section id="join" className="relative">
         <SmoothScrollHero
           scrollHeight={2500}
-          desktopImage="/images/runners-motion-blur.png"
-          mobileImage="/images/runners-motion-blur.png"
+          desktopImage="https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?w=1920&q=80"
+          mobileImage="https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?w=1200&q=80"
           initialClipPercentage={30}
           finalClipPercentage={70}
         />

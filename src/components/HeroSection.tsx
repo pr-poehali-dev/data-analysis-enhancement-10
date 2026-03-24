@@ -1,5 +1,5 @@
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
-import { Menu, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
 export default function HeroSection() {
@@ -8,28 +8,27 @@ export default function HeroSection() {
 
   const slides = [
     {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-j46TPXDHzpn3M65wMva3qHPNhwokYn.png",
-      alt: "Группа бегунов в движении",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80",
+      alt: "Свадебная церемония",
     },
     {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oH2K0gw1HEqvYhhbwJrYbmkBrbksyk.png",
-      alt: "Бегунья с эффектом размытия",
+      image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1920&q=80",
+      alt: "Молодожёны",
     },
     {
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DQ2brNc5Vszxllx17YNA6JqGqiHaRm.png",
-      alt: "Бегун во главе группы",
+      image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&q=80",
+      alt: "Свадебные цветы и детали",
     },
   ]
 
   const navItems = [
-    { name: "Главная", href: "#hero" },
-    { name: "Миссия", href: "#mission" },
-    { name: "Сообщество", href: "#community" },
-    { name: "Отзывы", href: "#testimonials" },
-    { name: "Вступить", href: "#join" },
+    { name: "Начало", href: "#hero" },
+    { name: "О нас", href: "#mission" },
+    { name: "Наша история", href: "#community" },
+    { name: "Слова близких", href: "#testimonials" },
+    { name: "Детали", href: "#join" },
   ]
 
-  // Navigation handlers
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
@@ -42,7 +41,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div id="hero" className="relative h-screen w-full overflow-hidden bg-black">
+    <div id="hero" className="relative h-screen w-full overflow-hidden bg-stone-900">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
@@ -50,30 +49,29 @@ export default function HeroSection() {
           backgroundImage: `url('${slides[currentSlide].image}')`,
         }}
       >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between p-6 md:p-8">
-        {/* Logo/Brand */}
-        <div className="text-white font-bold text-xl tracking-wider">STRIDE</div>
+        <div className="text-white font-light text-xl tracking-[0.4em] italic" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          A & M
+        </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="relative text-white hover:text-gray-300 transition-colors duration-300 font-medium tracking-wide pb-1 group"
+              className="relative text-white/90 hover:text-white transition-colors duration-300 font-light tracking-widest text-sm pb-1 group"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-white/60 transition-all duration-300 ease-out group-hover:w-full"></span>
             </button>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white hover:text-gray-300 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -91,7 +89,8 @@ export default function HeroSection() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-white text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300"
+                className="text-white text-2xl font-light tracking-[0.3em] hover:text-gray-300 transition-colors duration-300 italic"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 {item.name}
               </button>
@@ -103,78 +102,63 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="text-center text-white max-w-4xl">
-          {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider mb-4 leading-none">
-            STRIDE
+          <p className="text-sm md:text-base font-light tracking-[0.5em] mb-6 text-white/70 uppercase" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Приглашение на свадьбу
+          </p>
+
+          <h1
+            className="text-6xl md:text-8xl lg:text-9xl font-light tracking-wide mb-4 leading-none italic"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            Алина
             <br />
-            COLLECTIVE
+            <span className="text-4xl md:text-5xl lg:text-6xl not-italic tracking-[0.4em] font-extralight">&amp;</span>
+            <br />
+            Михаил
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">Беговое сообщество</p>
+          <p className="text-lg md:text-xl font-light tracking-[0.3em] mb-10 text-white/80" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            15 июня 2025 года
+          </p>
 
-          {/* CTA Button - Now using LiquidButton */}
           <LiquidButton
             size="xxl"
-            className="font-semibold text-lg tracking-wide"
+            className="font-light text-base tracking-[0.3em]"
             onClick={() => scrollToSection("#join")}
           >
-            Присоединиться
+            Подтвердить присутствие
           </LiquidButton>
         </div>
       </div>
 
-      {/* Slider Navigation */}
+      {/* Slide Dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex items-center space-x-4">
-          {/* Previous Arrow */}
-          <button
-            onClick={prevSlide}
-            className="text-white hover:text-gray-300 transition-colors p-2"
-            aria-label="Предыдущий слайд"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Slide Indicators */}
-          <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "bg-white" : "bg-white/40 hover:bg-white/60"
-                }`}
-                aria-label={`Перейти к слайду ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Next Arrow */}
-          <button
-            onClick={nextSlide}
-            className="text-white hover:text-gray-300 transition-colors p-2"
-            aria-label="Следующий слайд"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
-      </div>
-
-      {/* Side Navigation Indicators */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 hidden md:block">
-        <div className="flex flex-col space-y-3">
+        <div className="flex items-center space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-1 h-8 transition-all duration-300 ${
-                currentSlide === index ? "bg-white" : "bg-white/40 hover:bg-white/60"
+              className={`transition-all duration-300 ${
+                currentSlide === index ? "w-8 h-px bg-white" : "w-3 h-px bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Слайд ${index + 1}`}
             />
           ))}
         </div>
+      </div>
+
+      {/* Side Navigation */}
+      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 hidden md:flex flex-col space-y-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-px h-8 transition-all duration-300 ${
+              currentSlide === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
+            }`}
+            aria-label={`Слайд ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   )
